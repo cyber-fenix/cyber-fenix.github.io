@@ -1,7 +1,7 @@
-# cyberfenix.github.io
+# cyber-fenix.github.io
 
 The CyberFenix website — a static site served by GitHub Pages at
-<https://cyberfenix.github.io/>.
+<https://cyber-fenix.github.io/>.
 
 No build step, no dependencies, no JavaScript. Edit the HTML, push to `main`,
 and GitHub publishes it within a minute or two.
@@ -46,18 +46,16 @@ domain, or from a local folder without changes.
    grep -rl REPLACE_ME . | xargs sed -i '' \
      's|https://chrome.google.com/webstore/detail/REPLACE_ME|<your real store URL>|g'
    ```
-2. **Support email.** `support@example.com` appears on the support and privacy
-   pages. Replace it with a real address:
-   ```sh
-   grep -rl support@example.com . | xargs sed -i '' 's|support@example.com|<your address>|g'
-   ```
-3. **Screenshots.** Replace the five grey placeholders in `assets/img/` — see
+2. **Screenshots.** Replace the five grey placeholders in `assets/img/` — see
    [`assets/img/README.md`](assets/img/README.md) for the shot list and sizes.
-4. **Trial length.** The home and product pages say the trial is **7 days**.
-   Confirm that matches `TRIAL_DAYS` in the extension's `src/lib/license.ts`
-   before going live.
-5. **Pricing.** No price is stated anywhere on the site. Add it to the product
+3. **Pricing.** No price is stated anywhere on the site. Add it to the product
    page's plans section once it is fixed.
+
+Settled, but re-check if either changes:
+
+- **Trial length** — the site says **3 days**, matching `TRIAL_DAYS` in the
+  extension's `src/lib/license.ts`. Change both together; it is a public promise.
+- **Support address** — `cyberfenix.dev@gmail.com`, on the support and privacy pages.
 
 ## Adding a product
 
@@ -76,7 +74,7 @@ When a domain is registered:
    e.g. `cyberfenix.com`.
 2. At the DNS provider, point the apex at GitHub Pages
    (`185.199.108.153`, `.109.153`, `.110.153`, `.111.153`) and add a `www`
-   `CNAME` to `cyberfenix.github.io`.
+   `CNAME` to `cyber-fenix.github.io`.
 3. In the repo's Settings → Pages, set the custom domain and enable
    **Enforce HTTPS**.
 4. Update the absolute URLs in each page's `<link rel="canonical">` and
