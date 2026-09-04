@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy | CyberFenix</title>
+<meta name="description" content="The CyberFenix privacy policy: what our browser extensions can access, what is stored on your device, and what is never transmitted anywhere.">
+<link rel="canonical" href="https://cyberfenix.github.io/privacy/">
+<link rel="icon" href="../assets/img/logo.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+<meta name="theme-color" content="#0b0e14">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CyberFenix">
+<meta property="og:title" content="Privacy Policy | CyberFenix">
+<meta property="og:description" content="What our extensions access, what stays on your device, and what is never transmitted.">
+<meta property="og:url" content="https://cyberfenix.github.io/privacy/">
+<meta property="og:image" content="https://cyberfenix.github.io/assets/img/og-image.png">
+<link rel="stylesheet" href="../assets/css/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../">
+      <svg width="30" height="30" viewBox="0 0 64 64" aria-hidden="true">
+        <defs><linearGradient id="bg1" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#ff6a3d"/><stop offset="1" stop-color="#f5a524"/>
+        </linearGradient></defs>
+        <rect width="64" height="64" rx="15" fill="url(#bg1)"/>
+        <path fill="#fff" fill-rule="evenodd" d="M32 8c8.5 12 13.5 19 13.5 26.5a13.5 13.5 0 0 1-27 0C18.5 27 23.5 20 32 8zm0 22c3.6 5.2 5.6 8.2 5.6 11a5.6 5.6 0 0 1-11.2 0c0-2.8 2-5.8 5.6-11z"/>
+      </svg>
+      <span>Cyber<span class="fen">Fenix</span></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="../#products">Products</a>
+      <a href="../support/">Support</a>
+      <a href="./" aria-current="page">Privacy</a>
+      <a class="btn btn-primary btn-sm" href="../products/gmail-bulk-extractor/">Get the extension</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap wrap-narrow page-head">
+    <p class="eyebrow">Legal</p>
+    <h1>Privacy Policy</h1>
+    <p class="updated">Effective 4 September 2026 · Applies to all CyberFenix browser extensions and to this website.</p>
+  </div>
+
+  <div class="wrap wrap-narrow prose" style="padding-bottom:80px">
+
+    <div class="note">
+      <p><strong>The short version.</strong> Our extensions do not collect, transmit, or
+      store your email. Everything they do happens inside your own browser. We operate no
+      server that receives your data, and we have no way to read your messages. The only
+      network requests any of our extensions make are licence checks to our payment
+      provider, which never include email content.</p>
+    </div>
+
+    <h2>1. Who we are</h2>
+    <p>CyberFenix builds browser extensions, currently distributed through the Chrome Web
+    Store. In this policy, "we" and "our" refer to CyberFenix, and "the extension" refers to
+    any CyberFenix browser extension you have installed.</p>
+
+    <h2>2. What the extension can access</h2>
+    <p>Gmail Bulk Extractor runs on <code>mail.google.com</code> and works with the Gmail
+    session you are already signed into. When you select messages and choose an action, it
+    reads the content and attachments of those messages so that it can convert them into
+    files.</p>
+    <p>That processing happens entirely on your device. The message content is held in
+    browser memory only for as long as the export takes, then written to the download
+    location you have configured in your browser. It is never sent to us or to any third
+    party.</p>
+    <p>The extension does not use Google OAuth, requests no Gmail API scopes, and has no
+    access to your Google account credentials.</p>
+
+    <h2>3. What is stored on your device</h2>
+    <p>The extension keeps a small amount of data in your browser's local extension storage
+    (<code>chrome.storage.local</code>). This never leaves your machine and is removed when
+    you uninstall the extension.</p>
+    <table>
+      <thead><tr><th>Stored item</th><th>What it is</th></tr></thead>
+      <tbody>
+        <tr><td>Usage counter</td><td>A count of emails processed in the current seven-day window, and the timestamp that window began. Used to apply the free-tier allowance.</td></tr>
+        <tr><td>Preferences</td><td>Your file and folder naming templates, if you have set any.</td></tr>
+        <tr><td>Licence state</td><td>A cached record of whether your Pro licence or trial is active, supplied by our payment provider.</td></tr>
+      </tbody>
+    </table>
+    <p>No email addresses, subjects, message bodies, attachments, or file names are recorded
+    in this storage.</p>
+
+    <h2>4. What leaves your device</h2>
+    <p>The extension makes network requests to exactly one external service:
+    <strong>ExtensionPay</strong> (<code>extensionpay.com</code>), which handles licensing and
+    payment on our behalf and uses <strong>Stripe</strong> as its payment processor.</p>
+    <p>These requests occur when the extension checks whether your licence is active, when
+    you start a trial, and when you open the checkout, login, or subscription-management
+    pages. They carry an anonymous installation identifier and, if you have purchased,
+    the email address associated with your licence. <strong>They never contain email content,
+    subjects, sender or recipient addresses, attachments, or usage details.</strong></p>
+    <p>If you choose to buy Pro, your email address and payment details are collected and
+    processed by ExtensionPay and Stripe under their own privacy policies. We never see or
+    store your card details. From the ExtensionPay dashboard we can see the email address on
+    a licence and whether it is active — nothing else.</p>
+    <ul>
+      <li><a href="https://extensionpay.com/privacy" rel="noopener">ExtensionPay privacy policy</a></li>
+      <li><a href="https://stripe.com/privacy" rel="noopener">Stripe privacy policy</a></li>
+    </ul>
+
+    <h2>5. What we do not do</h2>
+    <ul>
+      <li>We do not collect analytics or telemetry of any kind.</li>
+      <li>We do not use tracking pixels, advertising identifiers, or fingerprinting.</li>
+      <li>We do not sell, rent, or share personal information with anyone.</li>
+      <li>We do not build user profiles, and we do not use your data to train models.</li>
+      <li>We do not transmit, store, or have any means of accessing your email.</li>
+    </ul>
+
+    <h2>6. Browser permissions, and why each is needed</h2>
+    <p>Chrome asks you to approve a set of permissions at install. Each one exists for a
+    specific technical reason:</p>
+    <table>
+      <thead><tr><th>Permission</th><th>Why it is required</th></tr></thead>
+      <tbody>
+        <tr><td><code>debugger</code></td><td>Chrome exposes proper PDF rendering only through the DevTools Protocol. The extension uses this for a single <code>Page.printToPDF</code> call on a tab it opened itself. This is why Chrome shows a "started debugging this browser" banner during an export.</td></tr>
+        <tr><td><code>downloads</code></td><td>To save the PDFs, attachments and archives it produces.</td></tr>
+        <tr><td><code>storage</code></td><td>To keep the local data listed in section 3.</td></tr>
+        <tr><td><code>scripting</code>, <code>tabs</code>, <code>activeTab</code></td><td>To add the toolbar to Gmail and to render the print view used for PDF output.</td></tr>
+        <tr><td>Access to <code>mail.google.com</code></td><td>To read the messages you select, using the session you are already signed into.</td></tr>
+        <tr><td>Access to <code>extensionpay.com</code></td><td>To check and activate your licence. No email data is involved.</td></tr>
+      </tbody>
+    </table>
+    <p>The extension requests no host permissions beyond those two domains, and cannot
+    operate on any other site.</p>
+
+    <h2>7. This website</h2>
+    <p>This site is a set of static pages hosted on GitHub Pages. It sets no cookies, runs no
+    analytics, and loads no third-party scripts, fonts, or trackers — every file it serves
+    comes from this domain. GitHub may record standard server access logs, including IP
+    addresses, as described in the
+    <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">GitHub Privacy Statement</a>.</p>
+
+    <h2>8. Your rights and choices</h2>
+    <p>Because we hold almost nothing, there is very little to request. You can:</p>
+    <ul>
+      <li><strong>Delete local data</strong> — uninstalling the extension removes everything it stored in your browser.</li>
+      <li><strong>Access or delete licence data</strong> — email us and we will retrieve or delete the record held for your licence, subject to any records ExtensionPay or Stripe must keep for tax and accounting purposes.</li>
+      <li><strong>Use the extension without giving us anything</strong> — the free tier requires no account, no email address, and no payment.</li>
+    </ul>
+    <p>If you are in the EEA or UK, our lawful basis for processing licence data is the
+    performance of a contract with you; we process no other personal data.</p>
+
+    <h2>9. Children</h2>
+    <p>Our extensions are general-purpose productivity tools and are not directed at
+    children under 13. We do not knowingly collect personal information from children.</p>
+
+    <h2>10. Data breaches</h2>
+    <p>We hold no database of user content that could be breached. Should a security issue
+    affect licence records held by our payment provider, we will publish a notice on this
+    site and notify affected licence holders by email.</p>
+
+    <h2>11. Changes to this policy</h2>
+    <p>If this policy changes materially, we will update the effective date at the top of
+    this page and note the change on our GitHub repository. Continued use of the extension
+    after a change constitutes acceptance of the revised policy.</p>
+
+    <h2>12. Contact</h2>
+    <p>Questions about privacy, or a request under section 8:
+    <a href="mailto:support@example.com">support@example.com</a>.
+    You can also open an issue on
+    <a href="https://github.com/0x13A0F/gmail-bulk-extractor" rel="noopener">our GitHub repository</a>.</p>
+
+    <div class="note" style="margin-top:36px">
+      <p><strong>Verify it yourself.</strong> Gmail Bulk Extractor is open source under the
+      MIT licence. Every claim on this page can be checked against
+      <a href="https://github.com/0x13A0F/gmail-bulk-extractor" rel="noopener">the published source code</a>.</p>
+    </div>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="../">
+          <svg width="28" height="28" viewBox="0 0 64 64" aria-hidden="true">
+            <defs><linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#ff6a3d"/><stop offset="1" stop-color="#f5a524"/>
+            </linearGradient></defs>
+            <rect width="64" height="64" rx="15" fill="url(#bg2)"/>
+            <path fill="#fff" fill-rule="evenodd" d="M32 8c8.5 12 13.5 19 13.5 26.5a13.5 13.5 0 0 1-27 0C18.5 27 23.5 20 32 8zm0 22c3.6 5.2 5.6 8.2 5.6 11a5.6 5.6 0 0 1-11.2 0c0-2.8 2-5.8 5.6-11z"/>
+          </svg>
+          <span>Cyber<span class="fen">Fenix</span></span>
+        </a>
+        <p>Privacy-first browser extensions that automate the repetitive parts of working
+           with email.</p>
+      </div>
+      <div>
+        <h4>Products</h4>
+        <ul>
+          <li><a href="../products/gmail-bulk-extractor/">Gmail Bulk Extractor</a></li>
+          <li><a href="https://chrome.google.com/webstore/detail/REPLACE_ME">Chrome Web Store</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Help</h4>
+        <ul>
+          <li><a href="../support/">Support</a></li>
+          <li><a href="../support/#troubleshooting">Troubleshooting</a></li>
+          <li><a href="../support/#billing">Billing &amp; Pro</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="./">Privacy policy</a></li>
+          <li><a href="https://github.com/0x13A0F/gmail-bulk-extractor">Source on GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 CyberFenix. All rights reserved.</span>
+      <span>Built to keep your data on your own machine.</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
