@@ -38,23 +38,21 @@ roughly ten pages, revisit that.
 Links are relative, so the site works at a GitHub Pages subdomain, at a custom
 domain, or from a local folder without changes.
 
-## Before publishing — checklist
+## Still open
 
-1. **Chrome Web Store link.** Every "Add to Chrome" button points at a
-   placeholder. Once the extension is live, replace it everywhere:
-   ```sh
-   grep -rl REPLACE_ME . | xargs sed -i '' \
-     's|https://chrome.google.com/webstore/detail/REPLACE_ME|<your real store URL>|g'
-   ```
-2. **Pricing.** No price is stated anywhere on the site. Add it to the product
+1. **Pricing.** No price is stated anywhere on the site. Add it to the product
    page's plans section once it is fixed.
-3. **`gbe-naming.png`** is still a grey placeholder, but nothing references it —
+2. **`gbe-naming.png`** is still a grey placeholder, but nothing references it —
    drop it in only if you add a section that uses it.
 
-Settled, but re-check if either changes:
+## Settled — but change these together if they change at all
 
+- **Chrome Web Store URL** — every "Add to Chrome" button points at
+  `https://chromewebstore.google.com/detail/gmail-bulk-extractor/kiplmkbhobmlolkeodgophegcdphiolp`
+  (9 links across the four pages).
 - **Trial length** — the site says **7 days**, matching `TRIAL_DAYS` in the
-  extension's `src/lib/license.ts`. Change both together; it is a public promise.
+  extension's `src/lib/license.ts` and the labels in its popup and
+  `openTrialPage()` call. It is a public promise; move all of them at once.
 - **Support address** — `cyberfenix.dev@gmail.com`, on the support and privacy pages.
 
 ## Adding a product
