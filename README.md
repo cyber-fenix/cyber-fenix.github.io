@@ -46,14 +46,14 @@ domain, or from a local folder without changes.
    grep -rl REPLACE_ME . | xargs sed -i '' \
      's|https://chrome.google.com/webstore/detail/REPLACE_ME|<your real store URL>|g'
    ```
-2. **Screenshots.** Replace the five grey placeholders in `assets/img/` — see
-   [`assets/img/README.md`](assets/img/README.md) for the shot list and sizes.
-3. **Pricing.** No price is stated anywhere on the site. Add it to the product
+2. **Pricing.** No price is stated anywhere on the site. Add it to the product
    page's plans section once it is fixed.
+3. **`gbe-naming.png`** is still a grey placeholder, but nothing references it —
+   drop it in only if you add a section that uses it.
 
 Settled, but re-check if either changes:
 
-- **Trial length** — the site says **3 days**, matching `TRIAL_DAYS` in the
+- **Trial length** — the site says **7 days**, matching `TRIAL_DAYS` in the
   extension's `src/lib/license.ts`. Change both together; it is a public promise.
 - **Support address** — `cyberfenix.dev@gmail.com`, on the support and privacy pages.
 
