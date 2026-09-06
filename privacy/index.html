@@ -45,17 +45,18 @@
   <div class="wrap wrap-narrow page-head">
     <p class="eyebrow">Legal</p>
     <h1>Privacy Policy</h1>
-    <p class="updated">Effective 4 September 2026 · Applies to all CyberFenix browser extensions and to this website.</p>
+    <p class="updated">Effective 7 September 2026 · Applies to all CyberFenix browser extensions and to this website.</p>
   </div>
 
   <div class="wrap wrap-narrow prose" style="padding-bottom:80px">
 
     <div class="note">
-      <p><strong>The short version.</strong> Our extensions do not collect, transmit, or
-      store your email. Everything they do happens inside your own browser. We operate no
-      server that receives your data, and we have no way to read your messages. The only
-      network requests any of our extensions make are licence checks to our payment
-      provider, which never include email content.</p>
+      <p><strong>The short version.</strong> Our extensions do their work inside your own
+      browser. We operate no server that receives your data, we collect no analytics, and we
+      have no way to read your email, your viewing habits, or anything else you do. The only
+      network requests our extensions make are licence checks to our payment provider
+      (Gmail Bulk Extractor) and requests for public channel feeds on youtube.com
+      (LocalTube). Neither carries your personal content.</p>
     </div>
 
     <h2>1. Who we are</h2>
@@ -63,22 +64,35 @@
     Store. In this policy, "we" and "our" refer to CyberFenix, and "the extension" refers to
     any CyberFenix browser extension you have installed.</p>
 
-    <h2>2. What the extension can access</h2>
-    <p>Gmail Bulk Extractor runs on <code>mail.google.com</code> and works with the Gmail
-    session you are already signed into. When you select messages and choose an action, it
-    reads the content and attachments of those messages so that it can convert them into
-    files.</p>
+    <h2>2. What each extension can access</h2>
+
+    <h3>Gmail Bulk Extractor</h3>
+    <p>Runs on <code>mail.google.com</code> and works with the Gmail session you are already
+    signed into. When you select messages and choose an action, it reads the content and
+    attachments of those messages so that it can convert them into files.</p>
     <p>That processing happens entirely on your device. The message content is held in
     browser memory only for as long as the export takes, then written to the download
     location you have configured in your browser. It is never sent to us or to any third
     party.</p>
-    <p>The extension does not use Google OAuth, requests no Gmail API scopes, and has no
-    access to your Google account credentials.</p>
+
+    <h3>LocalTube</h3>
+    <p>Runs on <code>www.youtube.com</code>. It adds its own follow, like and save controls
+    to the page, and can replace the YouTube homepage grid with a list built from the
+    channels you have followed inside the extension.</p>
+    <p>LocalTube does not read your YouTube account. It does not access your real
+    subscriptions, watch history, or any signed-in state, and it works the same whether you
+    are signed in or not. The lists it builds are its own, created by you, and stored only
+    in this browser.</p>
+
+    <p>Neither extension uses Google OAuth, requests any Google API scopes, or has access to
+    your Google account credentials.</p>
 
     <h2>3. What is stored on your device</h2>
-    <p>The extension keeps a small amount of data in your browser's local extension storage
+    <p>Each extension keeps data in your browser's local extension storage
     (<code>chrome.storage.local</code>). This never leaves your machine and is removed when
     you uninstall the extension.</p>
+
+    <h3>Gmail Bulk Extractor</h3>
     <table>
       <thead><tr><th>Stored item</th><th>What it is</th></tr></thead>
       <tbody>
@@ -90,8 +104,34 @@
     <p>No email addresses, subjects, message bodies, attachments, or file names are recorded
     in this storage.</p>
 
+    <h3>LocalTube</h3>
+    <table>
+      <thead><tr><th>Stored item</th><th>What it is</th></tr></thead>
+      <tbody>
+        <tr><td>Followed channels</td><td>The channel IDs and names you chose to follow, and when you added them.</td></tr>
+        <tr><td>Playlists</td><td>Your playlists, including Watch Later and Liked, and the videos you saved to them.</td></tr>
+        <tr><td>Preferences</td><td>Whether the LocalTube feed replaces the YouTube homepage, and how often channel feeds refresh.</td></tr>
+        <tr><td>Feed cache</td><td>A short-lived copy of the public channel feeds already fetched, so the page does not re-request them on every visit. It is never included in a backup export and can be discarded at any time.</td></tr>
+      </tbody>
+    </table>
+    <p>This is the data your backup export contains. It is written only when you press
+    Export, saved by your own browser to your own download folder, and never sent anywhere.</p>
+
     <h2>4. What leaves your device</h2>
-    <p>The extension makes network requests to exactly one external service:
+    <p>Neither extension sends anything to a CyberFenix server, because there isn't one.
+    Their outbound requests are these, and only these.</p>
+
+    <h3>LocalTube: public channel feeds</h3>
+    <p>To build your feed, LocalTube requests the public upload feed of each channel you
+    follow, directly from <code>www.youtube.com/feeds/videos.xml</code>. These are the same
+    public feeds any RSS reader can subscribe to.</p>
+    <p>The requests are sent <strong>without cookies</strong>, so they are not associated
+    with any YouTube account, and they contain nothing but the channel ID being requested.
+    They are made only when you are on youtube.com with the extension active. LocalTube
+    makes no other network request of any kind, to us or to anyone.</p>
+
+    <h3>Gmail Bulk Extractor: licence checks</h3>
+    <p>Gmail Bulk Extractor makes network requests to exactly one external service:
     <strong>ExtensionPay</strong> (<code>extensionpay.com</code>), which handles licensing and
     payment on our behalf and uses <strong>Stripe</strong> as its payment processor.</p>
     <p>These requests occur when the extension checks whether your licence is active, when
@@ -115,11 +155,14 @@
       <li>We do not sell, rent, or share personal information with anyone.</li>
       <li>We do not build user profiles, and we do not use your data to train models.</li>
       <li>We do not transmit, store, or have any means of accessing your email.</li>
+      <li>We do not receive, log, or have any means of seeing which channels you follow or which videos you watch or save.</li>
     </ul>
 
     <h2>6. Browser permissions, and why each is needed</h2>
     <p>Chrome asks you to approve a set of permissions at install. Each one exists for a
-    specific technical reason:</p>
+    specific technical reason.</p>
+
+    <h3>Gmail Bulk Extractor</h3>
     <table>
       <thead><tr><th>Permission</th><th>Why it is required</th></tr></thead>
       <tbody>
@@ -133,6 +176,18 @@
     </table>
     <p>The extension requests no host permissions beyond those two domains, and cannot
     operate on any other site.</p>
+
+    <h3>LocalTube</h3>
+    <table>
+      <thead><tr><th>Permission</th><th>Why it is required</th></tr></thead>
+      <tbody>
+        <tr><td><code>storage</code></td><td>To keep the local data listed in section 3 — your follows, playlists and preferences.</td></tr>
+        <tr><td>Access to <code>www.youtube.com</code></td><td>To add its controls to YouTube pages, and to fetch the public channel feeds described in section 4.</td></tr>
+      </tbody>
+    </table>
+    <p>That is the entire permission list. LocalTube requests no <code>downloads</code>,
+    <code>tabs</code>, <code>scripting</code> or <code>debugger</code> permission, and cannot
+    operate on any site other than YouTube.</p>
 
     <h2>7. This website</h2>
     <p>This site is a set of static pages hosted on GitHub Pages. It sets no cookies, runs no
@@ -168,13 +223,15 @@
     <h2>12. Contact</h2>
     <p>Questions about privacy, or a request under section 8:
     <a href="mailto:cyberfenix.dev@gmail.com">cyberfenix.dev@gmail.com</a>.
-    You can also open an issue on
-    <a href="https://github.com/cyber-fenix/gmail-bulk-extractor" rel="noopener">our GitHub repository</a>.</p>
+    You can also open an issue on the GitHub repository for
+    <a href="https://github.com/cyber-fenix/gmail-bulk-extractor" rel="noopener">Gmail Bulk Extractor</a>
+    or <a href="https://github.com/cyber-fenix/localtube" rel="noopener">LocalTube</a>.</p>
 
     <div class="note" style="margin-top:36px">
-      <p><strong>Verify it yourself.</strong> Gmail Bulk Extractor is open source under the
-      MIT licence. Every claim on this page can be checked against
-      <a href="https://github.com/cyber-fenix/gmail-bulk-extractor" rel="noopener">the published source code</a>.</p>
+      <p><strong>Verify it yourself.</strong> Both extensions are open source under the MIT
+      licence. Every claim on this page can be checked against the published source code for
+      <a href="https://github.com/cyber-fenix/gmail-bulk-extractor" rel="noopener">Gmail Bulk Extractor</a>
+      and <a href="https://github.com/cyber-fenix/localtube" rel="noopener">LocalTube</a>.</p>
     </div>
 
   </div>
@@ -194,14 +251,14 @@
           </svg>
           <span>Cyber<span class="fen">Fenix</span></span>
         </a>
-        <p>Privacy-first browser extensions that automate the repetitive parts of working
-           with email.</p>
+        <p>Privacy-first browser extensions that automate the repetitive parts of using
+           the web.</p>
       </div>
       <div>
         <h4>Products</h4>
         <ul>
           <li><a href="../products/gmail-bulk-extractor/">Gmail Bulk Extractor</a></li>
-          <li><a href="https://chromewebstore.google.com/detail/gmail-bulk-extractor/kiplmkbhobmlolkeodgophegcdphiolp">Chrome Web Store</a></li>
+          <li><a href="../products/localtube/">LocalTube</a></li>
         </ul>
       </div>
       <div>
