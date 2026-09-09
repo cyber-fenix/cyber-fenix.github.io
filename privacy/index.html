@@ -126,10 +126,16 @@
     <p>To build your feed, LocalTube requests the public upload feed of each channel you
     follow, directly from <code>www.youtube.com/feeds/videos.xml</code>. These are the same
     public feeds any RSS reader can subscribe to.</p>
-    <p>The requests are sent <strong>without cookies</strong>, so they are not associated
-    with any YouTube account, and they contain nothing but the channel ID being requested.
-    They are made only when you are on youtube.com with the extension active. LocalTube
-    makes no other network request of any kind, to us or to anyone.</p>
+    <p>It also asks YouTube's public <strong>oEmbed</strong> endpoint
+    (<code>www.youtube.com/oembed</code>) for the <code>@handle</code> of a channel you
+    follow whose handle it does not know, so your subscriptions list can name channels the
+    way YouTube does. That request names one public video of that channel and nothing else,
+    it is made once per channel, and the answer is kept so it is never asked again.</p>
+    <p>Both kinds of request go to <code>www.youtube.com</code> and are sent
+    <strong>without cookies</strong>, so they are not associated with any YouTube account,
+    and they contain nothing but the channel or video being asked about. They are made only
+    when you are on youtube.com with the extension active. LocalTube makes no other network
+    request of any kind, to us or to anyone.</p>
 
     <h3>Gmail Bulk Extractor: licence checks</h3>
     <p>Gmail Bulk Extractor makes network requests to exactly one external service:
@@ -183,7 +189,7 @@
       <thead><tr><th>Permission</th><th>Why it is required</th></tr></thead>
       <tbody>
         <tr><td><code>storage</code></td><td>To keep the local data listed in section 3 — your follows, playlists and preferences.</td></tr>
-        <tr><td>Access to <code>www.youtube.com</code></td><td>To add its controls to YouTube pages, and to fetch the public channel feeds described in section 4.</td></tr>
+        <tr><td>Access to <code>www.youtube.com</code></td><td>To add its controls to YouTube pages, and to fetch the public channel feeds and handle lookups described in section 4.</td></tr>
       </tbody>
     </table>
     <p>That is the entire permission list. LocalTube requests no <code>downloads</code>,
