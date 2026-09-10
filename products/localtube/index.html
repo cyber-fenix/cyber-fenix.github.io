@@ -164,11 +164,12 @@
       </figure>
       <div>
         <p class="eyebrow">How it works</p>
-        <h2>Public feeds, read in your browser</h2>
+        <h2>YouTube's own endpoints, read in your browser</h2>
         <p>YouTube publishes a plain, public feed of recent uploads for every channel — the
            same kind of feed any RSS reader can subscribe to. LocalTube keeps a list of the
            channels you follow, fetches those feeds directly from youtube.com, and sorts the
-           results by date.</p>
+           results by date. For channel avatars and details it calls the same internal
+           endpoint youtube.com's own pages use — nothing is scraped from HTML.</p>
         <p>That is the whole mechanism. There is no API key, no OAuth, no scraping of your
            account, and no CyberFenix server in the path — the requests go from your browser
            to YouTube and nowhere else, and they are sent without your cookies attached.</p>

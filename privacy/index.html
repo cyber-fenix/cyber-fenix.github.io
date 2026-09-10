@@ -55,8 +55,8 @@
       browser. We operate no server that receives your data, we collect no analytics, and we
       have no way to read your email, your viewing habits, or anything else you do. The only
       network requests our extensions make are licence checks to our payment provider
-      (Gmail Bulk Extractor) and requests for public channel feeds on youtube.com
-      (LocalTube). Neither carries your personal content.</p>
+      (Gmail Bulk Extractor) and requests for public channel feeds and channel details
+      on youtube.com (LocalTube). Neither carries your personal content.</p>
     </div>
 
     <h2>1. Who we are</h2>
@@ -122,16 +122,20 @@
     <p>Neither extension sends anything to a CyberFenix server, because there isn't one.
     Their outbound requests are these, and only these.</p>
 
-    <h3>LocalTube: public channel feeds</h3>
+    <h3>LocalTube: YouTube's own endpoints</h3>
     <p>To build your feed, LocalTube requests the public upload feed of each channel you
     follow, directly from <code>www.youtube.com/feeds/videos.xml</code>. These are the same
     public feeds any RSS reader can subscribe to.</p>
-    <p>It also asks YouTube's public <strong>oEmbed</strong> endpoint
+    <p>For channel details — the avatar, <code>@handle</code> and subscriber count of a
+    channel you follow — LocalTube calls YouTube's own internal endpoint
+    (<code>www.youtube.com/youtubei/v1/browse</code>), the same one the youtube.com page you
+    are on uses to render a channel. These calls are spaced out, made only for channels you
+    follow, and each answer is kept so it is never asked again.</p>
+    <p>It can also ask YouTube's public <strong>oEmbed</strong> endpoint
     (<code>www.youtube.com/oembed</code>) for the <code>@handle</code> of a channel you
     follow whose handle it does not know, so your subscriptions list can name channels the
-    way YouTube does. That request names one public video of that channel and nothing else,
-    it is made once per channel, and the answer is kept so it is never asked again.</p>
-    <p>Both kinds of request go to <code>www.youtube.com</code> and are sent
+    way YouTube does. That request names one public video of that channel and nothing else.</p>
+    <p>All of these requests go to <code>www.youtube.com</code> and are sent
     <strong>without cookies</strong>, so they are not associated with any YouTube account,
     and they contain nothing but the channel or video being asked about. They are made only
     when you are on youtube.com with the extension active. LocalTube makes no other network
@@ -189,7 +193,7 @@
       <thead><tr><th>Permission</th><th>Why it is required</th></tr></thead>
       <tbody>
         <tr><td><code>storage</code></td><td>To keep the local data listed in section 3 — your follows, playlists and preferences.</td></tr>
-        <tr><td>Access to <code>www.youtube.com</code></td><td>To add its controls to YouTube pages, and to fetch the public channel feeds and handle lookups described in section 4.</td></tr>
+        <tr><td>Access to <code>www.youtube.com</code></td><td>To add its controls to YouTube pages, and to fetch the channel data described in section 4.</td></tr>
       </tbody>
     </table>
     <p>That is the entire permission list. LocalTube requests no <code>downloads</code>,
