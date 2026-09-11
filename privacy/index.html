@@ -131,6 +131,17 @@
     (<code>www.youtube.com/youtubei/v1/browse</code>), the same one the youtube.com page you
     are on uses to render a channel. These calls are spaced out, made only for channels you
     follow, and each answer is kept so it is never asked again.</p>
+    <p>Two things you ask for by pressing a button use that same endpoint. Loading a
+    channel's older videos, from the button on that channel's row in your subscriptions
+    list, reads the same pages of that channel's uploads the youtube.com channel page shows
+    you. Saving an existing YouTube playlist, from the button LocalTube adds to a playlist
+    page, reads that playlist's contents so a copy of it can be kept in your browser.
+    Neither happens on a schedule, in the background, or without you asking.</p>
+    <p>To show how long a video is, and to tell a Short apart from an ordinary upload,
+    LocalTube asks YouTube's player endpoint
+    (<code>www.youtube.com/youtubei/v1/player</code>) about videos already in your feed. It
+    reads the length and the video's own canonical address from the answer and nothing
+    else.</p>
     <p>It can also ask YouTube's public <strong>oEmbed</strong> endpoint
     (<code>www.youtube.com/oembed</code>) for the <code>@handle</code> of a channel you
     follow whose handle it does not know, so your subscriptions list can name channels the
